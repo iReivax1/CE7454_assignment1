@@ -9,11 +9,13 @@ import torch.optim as optim
 import torch.nn.functional as F
 import torch.nn as nn
 import torch
-from torch.utils.tensorboard import SummaryWriter
 from PIL import Image
+from main import create_model_2 
 import numpy as np
 from torchvision.transforms.transforms import Resize
-
+root_dir = "/Users/xavier/Documents/NTU/CE7454 Deep Learning/Assignment 1/FashionDataset"
+use_cuda = torch.cuda.is_available()
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 categories = ['cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'cat6']
 cat_1 = ['floral', 'graphic', 'striped',
